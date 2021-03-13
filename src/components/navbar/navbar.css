@@ -1,0 +1,19 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  background-color: lightblue;
+  flex-grow: 1;
+}
+
+.navbar-list {
+  padding-inline-start: 0px;
+}
+
+.navbar-item {
+  text-decoration: none;
+  color: black;
+  padding-right: 30px;
+}
