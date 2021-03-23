@@ -1,12 +1,18 @@
-import React from "react"
+import * as React from "react"
 import { Link } from "gatsby"
 import "./navbar.css"
 
-const Navbar = () => {
+const Navbar = ({ setShowMenu }) => {
+  const handleMenuButton = () => {
+    setShowMenu(true)
+  }
+
   return (
     <div className="navbar">
       <Link to="/">VDL</Link>
-      <Link to="/menu">Menu</Link>
+      <button onClick={handleMenuButton} className="menu-button">
+        Menu
+      </button>
     </div>
   )
 }
