@@ -1,15 +1,18 @@
 import * as React from "react"
+import { useContext } from "react"
+import ThemeContext from "../../context/theme-context"
 import "./menu.css"
 
 const Menu = ({ setShowMenu, setComponentToRender }) => {
+  const theme = useContext(ThemeContext)
   const handleOnClick = component => {
     console.log(`You clicked on a button`)
     setComponentToRender(component)
     setShowMenu(false)
   }
 
-  const themeToggle = () => {
-    console.log("You wish to toggle the theme.")
+  const handleThemeToggle = () => {
+    theme.toggleTheme()
   }
 
   return (
@@ -43,7 +46,7 @@ const Menu = ({ setShowMenu, setComponentToRender }) => {
           </button>
         </li>
         <li>
-          <button onClick={themeToggle}>Light/Dark Theme</button>
+          <button onClick={handleThemeToggle}>Light/Dark Theme</button>
         </li>
       </ul>
     </div>
