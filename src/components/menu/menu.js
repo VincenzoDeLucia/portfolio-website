@@ -1,10 +1,10 @@
 import * as React from "react"
 import { useContext } from "react"
-import ThemeContext from "../../context/theme-context"
+import { ThemeContext } from "../../context/theme-context"
 import "./menu.css"
 
 const Menu = ({ setShowMenu, setComponentToRender }) => {
-  const theme = useContext(ThemeContext)
+  const { darkTheme, setDarkTheme } = useContext(ThemeContext)
   const handleOnClick = component => {
     console.log(`You clicked on a button`)
     setComponentToRender(component)
@@ -12,7 +12,8 @@ const Menu = ({ setShowMenu, setComponentToRender }) => {
   }
 
   const handleThemeToggle = () => {
-    theme.toggleTheme()
+    setDarkTheme(!darkTheme)
+    console.log("You want dark theme: ", darkTheme)
   }
 
   return (
